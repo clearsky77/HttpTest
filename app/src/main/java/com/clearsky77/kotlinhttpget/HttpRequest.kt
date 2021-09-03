@@ -1,5 +1,6 @@
 package com.clearsky77.kotlinhttpget
 import android.os.Handler
+import android.util.Log
 import java.io.BufferedReader
 import java.io.IOException
 import java.io.InputStreamReader
@@ -30,6 +31,7 @@ class HttpRequest (val method: String, var uri: String, val handler: Handler): T
     fun get(): String {
         var response = ""
         paramBuffer?.let { uri += ("?" + it.toString()) }
+        Log.e("== HttpRequest.kt ==","uri.toString(): "+ uri.toString())
         val url = URL(uri)
 
         with(url.openConnection() as HttpURLConnection) {
@@ -49,6 +51,7 @@ class HttpRequest (val method: String, var uri: String, val handler: Handler): T
     fun post(): String {
         var response = ""
         val url = URL(uri)
+        Log.e("== HttpRequest.kt ==","uri.toString(): "+ uri.toString())
 
         with (url.openConnection() as HttpURLConnection) {
             requestMethod = "POST"

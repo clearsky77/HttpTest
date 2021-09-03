@@ -30,17 +30,21 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        apiGetBnt.setOnClickListener() {
+        httpGetBnt_postman.setOnClickListener() {
             val httpRequest = HttpRequest("GET", "https://postman-echo.com/get", handler)
-                                                            //보낸 값을 그대로 반환해주는
+                                                            //보낸 값을 그대로 반환해주는 사이트
             httpRequest.setParam("name", "냥냐루")
-            httpRequest.setParam("phone", "01010041111")
+            httpRequest.setParam("phone", "01023456789")
             httpRequest.start()
         }
 
-//        val httpRequest = HttpRequest("POST", "https://postman-echo.com/post", handler)
-//        httpRequest.setParam("name", "냐냐루")
-//        httpRequest.setParam("phone", "01023456789")
-//        httpRequest.start()
+        httpPostBnt_postman.setOnClickListener(){
+            val httpRequest = HttpRequest("POST", "https://postman-echo.com/post", handler)
+            //보낸 값을 그대로 반환해주는 사이트
+            httpRequest.setParam("name", "냐냐루")
+            httpRequest.setParam("phone", "01023456789")
+            httpRequest.start()
+        }
+
     }
 }

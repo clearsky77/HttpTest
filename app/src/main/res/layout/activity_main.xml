@@ -14,10 +14,16 @@
         android:text="Http Test"/>
 
     <Button
-        android:id="@+id/apiGetBnt"
+        android:id="@+id/httpGetBnt_postman"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="http get"/>
+        android:text="http Get"/>
+
+    <Button
+        android:id="@+id/httpPostBnt_postman"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="http Post"/>
 
     <TextView
         android:id="@+id/textResponse"
